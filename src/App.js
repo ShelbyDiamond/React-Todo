@@ -1,8 +1,11 @@
 import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
-import TodoList from './components/TodoComponents/TodoList'
+import TodoList from './components/TodoComponents/TodoList';
+import styled from 'styled-components';
 
-
+const Background = styled.div`
+background: lightpink;
+`
 const toDoList = [
   {
     task: 'Walk the fish',
@@ -67,15 +70,10 @@ class App extends React.Component {
   }
 
 
-  clearPurchased = () => {
-    this.setState({
-      groceries: this.state.groceries.filter(item => !item.purchased)
-    });
-  };
-  
   render() {
     console.log(this.state.myList)
     return (
+        <Background>
       <div className="App">
         <div className="header">        <h2>Hello, your Majesty!</h2>
         <p>What tasks can I complete for you today</p>
@@ -83,6 +81,7 @@ class App extends React.Component {
         <TodoList myList={this.state.myList} toggleTask={this.toggleTask} />
         </div>
       </div>
+</Background>
     );
   }
 }
