@@ -1,4 +1,12 @@
 import React from 'react';
+import styled from 'styled-components'
+
+
+const Button = styled.button `
+  border-radius: 5px;
+  background: rebeccapurple;
+  color: white;
+`
 
 class TodoForm extends React.Component {
   constructor() {
@@ -31,7 +39,7 @@ class TodoForm extends React.Component {
           name="chore"
           onChange={this.handleChanges}
         />
-        <button>Add</button>
+        <Button>Add</Button>
       </form>
     );
   }
