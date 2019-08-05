@@ -1,5 +1,6 @@
 import React from 'react';
-import ListForm from './components/TodoComponents/TodoForm';
+import TodoForm from './components/TodoComponents/TodoForm';
+import TodoList from './components/TodoComponents/TodoList'
 
 
 const toDoList = [
@@ -34,7 +35,8 @@ class App extends React.Component {
   constructor(){
     super();
     this.state ={
-      myList: toDoList
+      // myList: toDoList
+      myList: []
      }
   }
 
@@ -72,11 +74,13 @@ class App extends React.Component {
   };
   
   render() {
+    console.log(this.state.myList)
     return (
       <div className="App">
         <div className="header">        <h2>Hello, your Majesty!</h2>
         <p>What tasks can I complete for you today</p>
-        <ListForm addTask={this.addTask} />
+        <TodoForm addTask={this.addTask} />
+        <TodoList myList={this.state.myList} toggleTask={this.toggleTask} />
         </div>
       </div>
     );

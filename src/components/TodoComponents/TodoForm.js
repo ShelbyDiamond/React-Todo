@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ListForm extends React.Component {
+class TodoForm extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -14,18 +14,21 @@ class ListForm extends React.Component {
     });
   };
 
-  submitItem = event => {
+  submitChore = event => {
     event.preventDefault();
     this.props.addTask(this.state.chore);
-  };
+    this.setState({
+      chore: ''
+    })
+    };
 
   render() {
     return (
       <form onSubmit={this.submitChore}>
         <input
           type="text"
-          value={this.item}
-          name="item"
+          value={this.state.chore}
+          name="chore"
           onChange={this.handleChanges}
         />
         <button>Add</button>
@@ -34,4 +37,4 @@ class ListForm extends React.Component {
   }
 }
 
-export default ListForm;
+export default TodoForm;
