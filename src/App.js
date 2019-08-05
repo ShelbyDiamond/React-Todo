@@ -1,4 +1,6 @@
 import React from 'react';
+import ListForm from './components/TodoComponents/TodoForm';
+
 
 const toDoList = [
   {
@@ -33,7 +35,7 @@ class App extends React.Component {
     super();
     this.state ={
       myList: toDoList
-    }
+     }
   }
 
   toggleTask = id => {
@@ -62,10 +64,20 @@ class App extends React.Component {
     })
   }
 
+
+  clearPurchased = () => {
+    this.setState({
+      groceries: this.state.groceries.filter(item => !item.purchased)
+    });
+  };
+  
   render() {
     return (
-      <div>
-        <h2>Welcome to your Todo App!</h2>
+      <div className="App">
+        <div className="header">        <h2>Hello, your Majesty!</h2>
+        <p>What tasks can I complete for you today</p>
+        <ListForm addTask={this.addTask} />
+        </div>
       </div>
     );
   }
