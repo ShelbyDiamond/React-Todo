@@ -1,9 +1,26 @@
 import React from 'react';
 
-const ToDoList = [
+const toDoList = [
   {
-    task: '',
-    id: ,
+    task: 'Walk the fish',
+    id: 1528817077286,
+    completed: false
+  },
+
+  {
+    task: 'Feed the car',
+    id: 1528817084358,
+    completed: false
+  },
+
+  {
+    task: 'Paint with Russell',
+    id: 2282017222817,
+    completed: false
+  },
+  {
+    task: 'Clean the soap',
+    id: '0322201942579',
     completed: false
   }
 ]
@@ -15,10 +32,34 @@ class App extends React.Component {
   constructor(){
     super();
     this.state ={
-      task: this.task,
-      id: this.id,
-      
+      myList: toDoList
     }
+  }
+
+  toggleTask = id => {
+    this.setState({
+      myList: this.state.myList.map(chore => {
+        if (chore.id === id) {
+          return {
+            ...chore,
+            completed: !chore.completed
+          };
+        } else {
+          return chore;
+        }
+      })
+    })
+  }
+
+  addTask = taskName =>{
+    const newTask = {
+      task: taskName,
+      id: Date.now(),
+      completed: false
+    }
+    this.setState({
+      myList: [...this.state.myList, newTask]
+    })
   }
 
   render() {
