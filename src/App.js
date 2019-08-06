@@ -77,15 +77,15 @@ class App extends React.Component {
   render() {
     console.log(this.state.myList)
     return (
-        <Background>
-      <div className="App">
-        <div className="header">        <h2>Hello, your Majesty!</h2>
-        <p>What tasks can I complete for you today</p>
-        <TodoForm addTask={this.addTask} />
-        <TodoList myList={this.state.myList} toggleTask={this.toggleTask} />
+      <Background>
+        <div className="App">
+          <div className="header">        <h2>Hello, your Majesty!</h2>
+          <p>What tasks can I complete for you today</p>
+          <TodoForm addTask={this.addTask} />
+          <TodoList myList={this.state.myList} toggleTask={this.toggleTask} />
+          </div>
         </div>
-      </div>
-</Background>
+      </Background>
     );
   }
 }
