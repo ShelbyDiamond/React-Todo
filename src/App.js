@@ -67,6 +67,10 @@ class App extends React.Component {
     this.setState({
       myList: [...this.state.myList, newTask]
     })
+    // clearCompleted = () => {
+    //   this.setState({
+    //     myList: this.state.myList.filter(listItem => !listItem.completed)
+    //   });
   }
 
 
