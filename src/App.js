@@ -5,31 +5,34 @@ import styled from "styled-components"
 
 const Background = styled.div`
   background: lightpink;
+  padding: 10px;
+  justify-content: center;
+  width: 100%;
 `
-const toDoList = [
-  {
-    task: "Walk the fish",
-    id: "1528817077286",
-    completed: false
-  },
+// const toDoList = [
+//   {
+//     task: "Walk the fish",
+//     id: "1528817077286",
+//     completed: false
+//   },
 
-  {
-    task: "Feed the car",
-    id: "1528817084358",
-    completed: false
-  },
+//   {
+//     task: "Feed the car",
+//     id: "1528817084358",
+//     completed: false
+//   },
 
-  {
-    task: "Paint with Russell",
-    id: "2282017222817",
-    completed: false
-  },
-  {
-    task: "Clean the soap",
-    id: "0322201942579",
-    completed: false
-  }
-]
+//   {
+//     task: "Paint with Russell",
+//     id: "2282017222817",
+//     completed: false
+//   },
+//   {
+//     task: "Clean the soap",
+//     id: "0322201942579",
+//     completed: false
+//   }
+// ]
 
 class App extends React.Component {
   // you will need a place to store your state in this component.

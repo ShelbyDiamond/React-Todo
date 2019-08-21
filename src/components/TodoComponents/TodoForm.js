@@ -6,6 +6,7 @@ const Button = styled.button`
   background: rebeccapurple;
   color: white;
   display: flex;
+  justify-content: center;
 `
 
 class TodoForm extends React.Component {

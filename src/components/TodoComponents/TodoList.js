@@ -9,6 +9,7 @@ const Button = styled.button`
   background: rebeccapurple;
   color: white;
   display: flex;
+  justify-content: center;
 `
 const TodoList = props => {
   return (
