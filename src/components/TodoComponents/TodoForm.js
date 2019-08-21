@@ -1,34 +1,34 @@
-import React from 'react';
-import styled from 'styled-components'
+import React from "react"
+import styled from "styled-components"
 
-
-const Button = styled.button `
+const Button = styled.button`
   border-radius: 5px;
   background: rebeccapurple;
   color: white;
+  display: flex;
 `
 
 class TodoForm extends React.Component {
   constructor() {
-    super();
+    super()
     this.state = {
-        chore: ''
-    };
+      chore: ""
+    }
   }
 
   handleChanges = event => {
     this.setState({
       [event.target.name]: event.target.value
-    });
-  };
+    })
+  }
 
   submitChore = event => {
-    event.preventDefault();
-    this.props.addTask(this.state.chore);
+    event.preventDefault()
+    this.props.addTask(this.state.chore)
     this.setState({
-      chore: ''
+      chore: ""
     })
-    };
+  }
 
   render() {
     return (
@@ -41,8 +41,8 @@ class TodoForm extends React.Component {
         />
         <Button>Add</Button>
       </form>
-    );
+    )
   }
 }
 
-export default TodoForm;
+export default TodoForm
